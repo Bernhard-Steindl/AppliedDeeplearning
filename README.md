@@ -39,11 +39,11 @@ I would re-use the dataset from reference 7, ***A Fully Progressive Approach to 
 
 3.  Wenming, Yang & Zhang, Xuechen & Tian, Yapeng & Wang, Wei & Xue, Jing-Hao & Liao, Qingmin. (2019). Deep Learning for Single Image Super-Resolution: A Brief Review. IEEE Transactions on Multimedia. PP. 1-1. 10.1109/TMM.2019.2919431. 
 [link](https://www.researchgate.net/publication/333440390_Deep_Learning_for_Single_Image_Super-Resolution_A_Brief_Review)
-[PDF](3_Deep Learning for Single Image Super-Resolution_a brief review.pdf)
+[PDF](3_Deep_Learning_for_Single_Image_Super-Resolution_a_brief_review.pdf)
 
 4.  Wang, Zhihao & Chen, Jian & Hoi, Steven. (2019). Deep Learning for Image Super-resolution: A Survey. 
 [link](https://arxiv.org/pdf/1902.06068.pdf)
-[PDF](4_Deep Learning for Image Super-resolution_a survey.pdf)
+[PDF](4_Deep_Learning_for_Image_Super-resolution_a_survey.pdf)
 
 5.  Gao, Shangqi & Zhuang, Xiahai. (2019). Multi-scale deep neural networks for real image super-resolution. 
 [link](http://openaccess.thecvf.com/content_CVPRW_2019/papers/NTIRE/Gao_Multi-Scale_Deep_Neural_Networks_for_Real_Image_Super-Resolution_CVPRW_2019_paper.pdf)
