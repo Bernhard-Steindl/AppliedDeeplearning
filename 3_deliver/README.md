@@ -23,6 +23,7 @@ The application is wrapped into a docker container which contains everything req
 ```
 apt update
 apt install python3 python3-pip 
+pip3 install --upgrade pip3
 git clone https://github.com/websta/AppliedDeeplearning
 cd AppliedDeeplearning/3_deliver
 wget https://github.com/websta/AppliedDeeplearning/releases/download/0.1/weights-srgan.tar.gz weights-srgan.tar.gz
@@ -32,6 +33,14 @@ git clone https://github.com/krasserm/super-resolution super-resolution
 cd super-resolution
 git checkout 102b1211334d0e786c453744505beb389d2e83b1
 cp ../app/app.py .
+cp -r ../app/templates .
+cp -r ../app/uploads .
 cp -r ../weights .
+cp ../requirements.txt requirements.txt
 flask run --host=0.0.0.0 --port=80
+```
+
+
+```
+sudo docker build -t adl-super-resolution:latest
 ```
