@@ -18,3 +18,15 @@ Therefore I extracted the required code into a [Flask](https://github.com/pallet
 - ***/upscale*** to receive an image and upscale it
 
 The application is wrapped into a docker container which contains everything required to run the example.
+
+
+```
+git clone https://github.com/websta/AppliedDeeplearning
+cd 3_deliver
+pip install -r requirements.txt
+git clone https://github.com/krasserm/super-resolution super-resolution
+cd super-resolution
+git checkout 102b1211334d0e786c453744505beb389d2e83b1
+cd ..
+flask run
+```
