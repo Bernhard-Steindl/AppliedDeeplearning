@@ -35,7 +35,7 @@ lspci | grep -i nvidia
 update-pciids
 ```
 
-Tutorial 1:
+***Tutorial 1***:
 ```
 gcc --version
 sudo apt install gcc-6 g++-6
@@ -45,7 +45,7 @@ sudo apt install ubuntu-drivers-common
 ubuntu-drivers devices
 ```
 
-Tutorial 2:
+***Tutorial 2***:
 ```
 wget -c https://developer.nvidia.com/compute/cuda/9.2/Prod/local_installers/cuda_9.2.88_396.26_linux
 chmod +x cuda_9.2.88_396.26_linux
@@ -61,7 +61,7 @@ ln -s /usr/bin/gcc-6 /usr/local/cuda-9.2/bin/gcc
 ln -s /usr/bin/g++-6 /usr/local/cuda-9.2/bin/g++
 ```
 
-Tutorial 3: [https://docs.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
+***Tutorial 3***: [https://docs.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/n-series-driver-setup
 )
 ```
 CUDA_REPO_PKG=cuda-repo-ubuntu1804_10.1.243-1_amd64.deb
@@ -75,7 +75,7 @@ reboot
 sudo dpkg -i --force-overwrite /var/cache/apt/archives/nvidia-440_440.33.01-0ubuntu1_amd64.deb
 ```
 
-Tutorial 4: [https://www.tensorflow.org/install/gpu](https://www.tensorflow.org/install/gpu)
+***Tutorial 4***: [https://www.tensorflow.org/install/gpu](https://www.tensorflow.org/install/gpu)
 ```
 # Add NVIDIA package repositories
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
@@ -98,7 +98,7 @@ sudo apt-get install --no-install-recommends \
 ```
 
 
-Tutorial 5: Ubuntu 18.04 + NVIDIA
+***Tutorial 5***: Ubuntu 18.04 + NVIDIA
 ```
 sudo apt install nvidia-390 nvidia-cuda-toolkit libcupti-dev gcc-6 python3-numpy python3-dev python3-pip python3-wheel
 sudo mkdir -p /usr/local/cuda /usr/local/cuda/extras/CUPTI /usr/local/cuda/nvvm
@@ -112,7 +112,7 @@ sudo ln -s /usr/lib/nvidia-cuda-toolkit/libdevice /usr/local/cuda/nvvm/libdevice
 
 ```
 
-Finally tried official tensorflow docker image:
+***Finally tried official tensorflow docker image***:
 ```
 # install docker on ubuntu
 sudo apt-get remove docker docker-engine docker.io containerd runc;\
@@ -140,7 +140,7 @@ sudo docker run --gpus all --rm nvidia/cuda nvidia-smi
 ```
 
 
-All of the setup's resulted into positive results with 
+***All of the setup's resulted into positive results***
 ```
 nvidia-smi
 Wed Dec 18 22:43:57 2019
@@ -162,7 +162,7 @@ Wed Dec 18 22:43:57 2019
 +-----------------------------------------------------------------------------+
 ```
 
-But Tensorflow did not recognize GPU:
+***But Tensorflow did not recognize GPU***:
 ```
 Python
 
@@ -197,7 +197,6 @@ SavedModel file does not exist at: ./{saved_model.pbtxt|saved_model.pb}
 ```
 
 11. In Progress: Problem implementing HTML/JS application, do not know in which format the image is required to be upscaled by the model. Searching for a solution.
-
 
 
 
