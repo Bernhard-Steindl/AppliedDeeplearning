@@ -1,0 +1,61 @@
+<html>
+    <head>
+    <script>
+        function clear() {
+            document.getElementById("filechooser").value = ''
+        }
+
+        function PreviewImage() {
+            var oFReader = new FileReader();
+            oFReader.readAsDataURL(document.getElementById("filechooser").files[0]);
+
+            oFReader.onload = function (oFREvent) {
+                document.getElementById("uploadPreview").src = oFREvent.target.result;
+            };
+        };
+
+        function uploadFile() {
+            var blobFile = document.getElementById("filechooser").files[0];
+            var formData = new FormData();
+            formData.append("image", blobFile);
+            const link ='/upscale'
+            fetch(link, { 
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => {
+                        response.json().then(content => {
+                            // console.log('content', content)
+                            document.getElementById('upscaled').src = content['upscaled'];
+                            document.getElementById('simple_upscaled').src = content['simple_upscaled'];
+                        })                        
+                    }) // parse response as JSON (can be res.text() for plain response)
+                .then(result => {
+                    // console.log('Success result', result);
+                })
+                .catch(error => {
+                    console.log('Error', error)
+                });
+        }
+    </script>
+
+    <style>
+        img {
+            max-width:100%; 
+            height:auto;
+            padding: 2px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+<body onload="clear()"> 
+    <div class="container">
+        <div class="card p-2">
+            <input type="file" class="input-control" id="filechooser" name="myimage" onchange="PreviewImage();">
+            <button onclick="uploadFile();">Upscale</button>
+            <div><img id="uploadPreview" style="border: 2px solid #ccc;"></img></div>
+            <div><img id="simple_upscaled" style="border: 2px solid red;"></img><img id="upscaled" style="border: 2px solid green;"></img></div>
+        </div>
+    </div>
+</body>
+</html>

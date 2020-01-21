@@ -1,3 +1,5 @@
-tensorflow
+tensorflow>=2
 jsonify
 flask
+numpy
+pillow

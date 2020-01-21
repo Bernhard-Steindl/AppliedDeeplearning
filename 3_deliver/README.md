@@ -21,12 +21,17 @@ The application is wrapped into a docker container which contains everything req
 
 
 ```
+apt update
+apt install python3 python3-pip 
 git clone https://github.com/websta/AppliedDeeplearning
-cd 3_deliver
-pip install -r requirements.txt
+cd AppliedDeeplearning/3_deliver
+wget https://github.com/websta/AppliedDeeplearning/releases/download/0.1/weights-srgan.tar.gz weights-srgan.tar.gz
+tar -xzf weights-srgan.tar.gz
+pip3 install -r requirements.txt
 git clone https://github.com/krasserm/super-resolution super-resolution
 cd super-resolution
 git checkout 102b1211334d0e786c453744505beb389d2e83b1
-cd ..
-flask run
+cp ../app/app.py .
+cp -r ../weights .
+flask run --host=0.0.0.0 --port=80
 ```
