@@ -26,8 +26,8 @@
                 .then(response => {
                         response.json().then(content => {
                             // console.log('content', content)
-                            document.getElementById('upscaled').src = content['upscaled'];
-                            document.getElementById('simple_upscaled').src = content['simple_upscaled'];
+                            document.getElementById('upscaled_srgan').src = content['upscaled_srgan'];
+                            document.getElementById('upscaled_simple').src = content['upscaled_simple'];
                         })                        
                     }) // parse response as JSON (can be res.text() for plain response)
                 .then(result => {
@@ -45,16 +45,73 @@
             height:auto;
             padding: 2px;
         }
+        .chooser {
+            flex-direction: column;
+            display: flex;
+            align-items: center;
+        }
+        .btn_upscale {
+            width: 100%;
+            margin-bottom: 1em;
+        }
+        .header {
+            text-align: center;
+            padding-top: 2em;
+        }
+        .preview {
+            margin: 1em 0;            
+            border: 2px solid #ccc;
+        }
+        .simple-scaler {
+            border: 2px solid red;
+        }
+        .srgan-scaler {
+            border: 2px solid green;
+        }
+        .loader {
+            border: 16px solid #f3f3f3; /* Light grey */
+            border-top: 16px solid #3498db; /* Blue */
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
 <body onload="clear()"> 
-    <div class="container">
-        <div class="card p-2">
-            <input type="file" class="input-control" id="filechooser" name="myimage" onchange="PreviewImage();">
-            <button onclick="uploadFile();">Upscale</button>
-            <div><img id="uploadPreview" style="border: 2px solid #ccc;"></img></div>
-            <div><img id="simple_upscaled" style="border: 2px solid red;"></img><img id="upscaled" style="border: 2px solid green;"></img></div>
+    <div class="fluid-container">
+        <div class="row">
+            <div class="col-12 header">
+                <h1>Super-Awesome Super-Resolution</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 chooser">
+                <label for="filechooser">Please choose a low resolution file (PNG)</label>
+                <input type="file" class="btn-primary input-control" id="filechooser" name="myimage" onchange="PreviewImage();">
+            </div>
+            <div class="col-12">
+                <img id="uploadPreview" class="preview d-block mx-auto"></img>
+            </div>
+            <div class="col-12">
+                <button class="btn_upscale btn-primary" onclick="uploadFile();">Upscale</button>
+            </div>
+            
+            <div class="col-12 col-lg-6">
+                <!-- <div class="loader"></div>  -->
+                <img id="upscaled_simple" class="simple-scaler d-block mx-auto"></img>
+            </div>
+            <div class="col-12 col-lg-6">
+                <!-- <div class="loader"></div>  -->
+                <img id="upscaled_srgan" class="srgan-scaler d-block mx-auto"></img>
+            </div>
+            
         </div>
     </div>
 </body>

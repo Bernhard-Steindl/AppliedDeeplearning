@@ -44,3 +44,6 @@ flask run --host=0.0.0.0 --port=80
 ```
 sudo docker build -t adl-super-resolution:latest
 ```
+
+
+TODO: report, dockerfile (bring tf to version 2), application (spit upscale and simpleUpscale into two endpoints, update index.html), presentation

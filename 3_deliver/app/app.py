@@ -60,8 +60,10 @@ def upscale():
     # pre_sr = resolve_single(pre_generator, lr)
     gan_sr = resolve_single(gan_generator, lr)    
     
-    return jsonify({'upscaled': 'data:image/png;charset=utf-8;base64,' + base64_encode(Image.fromarray(np.asarray(gan_sr))), 
-        'simple_upscaled': 'data:image/png;charset=utf-8;base64,' + base64_encode(simple_upscaled)})
+    return jsonify({
+        'upscaled_srgan': 'data:image/png;charset=utf-8;base64,' + base64_encode(Image.fromarray(np.asarray(gan_sr))), 
+        'upscaled_simple': 'data:image/png;charset=utf-8;base64,' + base64_encode(simple_upscaled)
+        })
 
 
 if __name__ == "__main__":

@@ -1,2 +1,6 @@
 dataset
-.Rproj.user
+**/*.Rproj.user
+**/*.aux
+**/*.bbl
+**/*.blg
+**/*.out
