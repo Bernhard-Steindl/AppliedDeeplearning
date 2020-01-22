@@ -4,3 +4,4 @@ dataset
 **/*.bbl
 **/*.blg
 **/*.out
+.Rproj.user

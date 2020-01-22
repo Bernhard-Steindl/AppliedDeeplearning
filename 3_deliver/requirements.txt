@@ -1,5 +1,6 @@
 # tensorflow==2.*
 jsonify
+matplotlib
 flask
 numpy
 pillow

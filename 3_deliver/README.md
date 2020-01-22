@@ -29,6 +29,7 @@ cd AppliedDeeplearning/3_deliver
 wget https://github.com/websta/AppliedDeeplearning/releases/download/0.1/weights-srgan.tar.gz weights-srgan.tar.gz
 tar -xzf weights-srgan.tar.gz
 pip3 install -r requirements.txt
+pip3 install --upgrade tensorflow
 git clone https://github.com/krasserm/super-resolution super-resolution
 cd super-resolution
 git checkout 102b1211334d0e786c453744505beb389d2e83b1
@@ -43,6 +44,10 @@ flask run --host=0.0.0.0 --port=80
 
 ```
 sudo docker build -t adl-super-resolution:latest
+sudo docker run -d -p 5000:5000 adl-super-resolution
+
+sudo docker image ls
+sudo docker image rm -f 271095295fbf
 ```
 
 
