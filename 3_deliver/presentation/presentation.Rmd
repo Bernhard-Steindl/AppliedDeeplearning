@@ -1,0 +1,50 @@
+---
+title: "Super-Awesome Super-Resolution"
+subtitle: "Applied Deep Learning"
+author: "Weber Gerald, 0125536"
+date: "1/23/2020"
+output: 
+  beamer_presentation:
+      theme: "Rochester"
+      colortheme: "seahorse"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Initiate
+
+Improve existing super resolution generative adversarial network.
+
+```{r, echo = FALSE, out.width="30%"}
+myimages<-c('grumpy1.png', 'grumpy2.png', 'grumpy3.png')
+knitr::include_graphics(myimages)
+```
+
+## Hacking
+
+- Succeeded CPU training.
+
+- Failed CUDA.
+
+- Failed improving.
+
+## Delivery
+
+- Reused existing SR GAN.
+
+- Implemented client/server app with Flask.
+
+## Take-aways
+
+- Still no idea how to invent complicated neural networks - need more practice.
+
+- Can be hard to setup CUDA support on Azure VM.
+
+- Use early stopping.
+
+## Thank you for your attention!
+
+![](../report/screenshot.png)
+

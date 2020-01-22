@@ -10,8 +10,9 @@ COPY ./super-resolution /super-resolution
 
 WORKDIR /super-resolution
 
+RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-RUN pip3 install --upgrade tensorflow
+# RUN pip3 install --upgrade tensorflow
 
 ENTRYPOINT [ "python3" ]
 
