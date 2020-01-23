@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Improve existing super resolution generative adversarial network.
 
-```{r, echo = FALSE, out.width="40%"}
+```{r, echo = FALSE, out.width="30%"}
 myimages<-c('grumpy1.png', 'grumpy2.png', 'grumpy3.png')
 knitr::include_graphics(myimages)
 ```
@@ -58,7 +58,7 @@ knitr::include_graphics(myimages)
 
 ## Thank you for your attention!
 
-```{r, echo = FALSE, out.width="100%", out.height="80%" }
+```{r, echo = FALSE}
 myimages<-c('../report/screenshot.png')
 knitr::include_graphics(myimages)
 
