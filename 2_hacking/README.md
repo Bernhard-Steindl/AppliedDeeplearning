@@ -170,7 +170,7 @@ import tensorflow as tf; print("Num GPUs Available: ", len(tf.config.experimenta
 ```
 
 
-8. Dismissed GPU, started training based on CPU (Azure compute optimized Standard F8s_v2 (8 vcpus, 16 GiB memory). ~4h for 1200 epochs.
+8. Dismissed GPU, started training based on CPU (Azure compute optimized Standard F8s_v2 (8 vcpus, 16 GiB memory). ~5h for 1000 epochs.
 Extracted checkpoint model for javascript application.
 
 9. Translate model to Tensorflow JS
