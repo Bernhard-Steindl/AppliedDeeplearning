@@ -199,6 +199,10 @@ SavedModel file does not exist at: ./{saved_model.pbtxt|saved_model.pb}
 11. In Progress: Problem implementing HTML/JS application, do not know in which format the image is required to be upscaled by the model. Searching for a solution.
 
 
+Colleague recommended at the presentation, but have not tried yet (from Tensorflow [Install GPU](https://www.tensorflow.org/install/gpu)):
+```
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda/extras/CUPTI/lib64
+```
 
 
 # References
