@@ -42,6 +42,8 @@ knitr::include_graphics(myimages)
 
 - Can be hard to setup CUDA support on Azure VM.
 
+- Creating docker images is a tedious task.
+
 - Use early stopping.
 
 ## Thank you for your attention!

@@ -5,3 +5,4 @@ dataset
 **/*.blg
 **/*.out
 .Rproj.user
+.Rhistory

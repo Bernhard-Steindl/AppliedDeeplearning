@@ -45,10 +45,15 @@ flask run --host=0.0.0.0 --port=80
 ```
 sudo docker build -t adl-super-resolution:latest
 sudo docker run -d -p 5000:5000 adl-super-resolution
+sudo docker run -it -p 5000:5000 adl-super-resolution
 
 sudo docker image ls
 sudo docker image rm -f 271095295fbf
 ```
 
+Reset Git to original branch
+```
+git checkout mybranch
+git reset --hard origin/mybranch
+```
 
-TODO: report, dockerfile (bring tf to version 2), application (spit upscale and simpleUpscale into two endpoints, update index.html), presentation
