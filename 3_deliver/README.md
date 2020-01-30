@@ -19,7 +19,7 @@ Therefore I extracted the required code into a [Flask](https://github.com/pallet
 
 The application is wrapped into a docker container which contains everything required to run the example.
 
-
+Some steps to pack everything in the right folder and test the application:
 ```
 apt update
 apt install python3 python3-pip 
@@ -41,19 +41,42 @@ cp ../requirements.txt requirements.txt
 flask run --host=0.0.0.0 --port=80
 ```
 
-
+Docker commands to create the docker image:
 ```
-sudo docker build -t adl-super-resolution:latest
-sudo docker run -d -p 5000:5000 adl-super-resolution
-sudo docker run -it -p 5000:5000 adl-super-resolution
-
-sudo docker image ls
-sudo docker image rm -f 271095295fbf
+docker build -t websta8/adl-super-resolution:latest .
 ```
-
-Reset Git to original branch
+Docker command to run it: In background or interactive:
 ```
-git checkout mybranch
-git reset --hard origin/mybranch
+docker run -d -p 5000:5000 websta8/adl-super-resolution
+docker run -it -p 5000:5000 websta8/adl-super-resolution
 ```
 
+Docker commands to list images and delete images:
+```
+docker image ls
+docker image rm -f 271095295fbf
+```
+
+Docker commands to push image to Dockerhub:
+```
+docker login
+docker tag websta8/adl-super-resolution:latest websta8/adl-super-resolution:1.0 
+docker push websta8/adl-super-resolution:1.0
+```
+
+Docker command to run the final image:
+```
+docker run -d -p 5000:5000 websta8/adl-super-resolution:1.0
+docker run -it -p 5000:5000 websta8/adl-super-resolution:1.0
+```
+
+Docker commands to release some space:
+```
+docker system prune
+docker builder prune
+```
+
+
+## Notes
+
+Running the docker image and sending large files (more than 400x400 pixels) to upscale, the memory consumption exceeded 8GB RAM. I could successfully test the docker image on an Azure B2ms (2 vcpu, 8GB memory) with the demo images.
