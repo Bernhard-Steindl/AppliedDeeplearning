@@ -6,3 +6,4 @@ dataset
 **/*.out
 .Rproj.user
 .Rhistory
+settings.json
