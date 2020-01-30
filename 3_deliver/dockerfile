@@ -11,7 +11,7 @@ WORKDIR /super-resolution
 # Update to pip > 19 for tensorflow2
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-# RUN pip3 install --upgrade tensorflow
+RUN pip3 install --upgrade tensorflow
 
 ENTRYPOINT [ "python3" ]
 # run flask app

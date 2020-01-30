@@ -1,5 +1,7 @@
 # Deliver
 
+Docker image: websta8/adl-super-resolution
+
 ## Summary of the previous attempts
 
 Could not use GPU for training and therefore stopped early. The intermediate model could not be converted to a JSON representation to reuse it in an Web application.
@@ -47,8 +49,8 @@ docker build -t websta8/adl-super-resolution:latest .
 ```
 Docker command to run it: In background or interactive:
 ```
-docker run -d -p 5000:5000 websta8/adl-super-resolution
-docker run -it -p 5000:5000 websta8/adl-super-resolution
+docker run -d -p 5000:5000 websta8/adl-super-resolution:latest
+docker run -it -p 5000:5000 websta8/adl-super-resolution:latest
 ```
 
 Docker commands to list images and delete images:
@@ -60,14 +62,14 @@ docker image rm -f 271095295fbf
 Docker commands to push image to Dockerhub:
 ```
 docker login
-docker tag websta8/adl-super-resolution:latest websta8/adl-super-resolution:1.0 
-docker push websta8/adl-super-resolution:1.0
+docker tag websta8/adl-super-resolution:latest websta8/adl-super-resolution:1.1
+docker push websta8/adl-super-resolution:1.1
 ```
 
 Docker command to run the final image:
 ```
-docker run -d -p 5000:5000 websta8/adl-super-resolution:1.0
-docker run -it -p 5000:5000 websta8/adl-super-resolution:1.0
+docker run -d -p 5000:5000 websta8/adl-super-resolution:1.1
+docker run -it -p 5000:5000 websta8/adl-super-resolution:1.1
 ```
 
 Docker commands to release some space:
