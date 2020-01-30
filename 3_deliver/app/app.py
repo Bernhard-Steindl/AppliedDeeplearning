@@ -10,7 +10,7 @@ import numpy as np
 from PIL import Image
 import io
 import base64
-tf.enable_eager_execution()
+# tf.enable_eager_execution()
 
 UPLOAD_FOLDER = 'uploads' 
 app = Flask(__name__)
